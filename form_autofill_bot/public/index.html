@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ใบสมัคร: ผู้จัดการทีมฟุตบอลค่ายแดง</title>
+    <style>
+      /* CSS */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #d71920;
+        color: #fff;
+      }
+
+      .form-container {
+        background-color: #1a1a1a; /* สีดำ */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        width: 400px;
+        text-align: left;
+      }
+
+      h2 {
+        text-align: center;
+        color: #ffff;
+      }
+
+      label {
+        display: block;
+        margin: 10px 0 5px;
+        color: #ffff;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0 15px;
+        border: 1px solid #ffff;
+        border-radius: 5px;
+        box-sizing: border-box;
+        background-color: #333;
+        color: #fff;
+      }
+
+      .checkbox-group {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #d71920; /* สีแดง */
+        color: #fff;
+      }
+
+      button:hover {
+        background-color: #b5171c; /* สีแดงเข้มขึ้น */
+      }
+
+      input[type="checkbox"] {
+        accent-color: #ffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>สมัครตำแหน่งผู้จัดการทีมฟุตบอลค่ายแดง</h2>
+      <form id="managerApplicationForm">
+        <label for="fullName">ชื่อเต็ม (Full Name):</label>
+        <input type="text" id="fullName" name="fullName" required />
+
+        <label for="pressure">ความสามารถในการรับมือแรงกดดัน (0-100):</label>
+        <input
+          type="number"
+          id="pressure"
+          name="pressure"
+          min="0"
+          max="100"
+          required
+        />
+
+        <label for="fanInteraction"
+          >ระดับความสามารถในการสื่อสารกับแฟนบอล:</label
+        >
+        <select id="fanInteraction" name="fanInteraction">
+          <option value="excellent">ยอดเยี่ยม (Excellent)</option>
+          <option value="good">ดี (Good)</option>
+          <option value="average">พอใช้ (Average)</option>
+          <option value="poor">แย่ (Poor)</option>
+        </select>
+
+        <label for="angerLevel"
+          >ระดับความโกรธต่อการทำงานของคู่แข่ง (0-10):</label
+        >
+        <input
+          type="number"
+          id="angerLevel"
+          name="angerLevel"
+          min="0"
+          max="10"
+          required
+        />
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="handleCriticism" name="handleCriticism" />
+          <label for="handleCriticism">พร้อมรับคำวิจารณ์จากแฟนบอลและสื่อ</label>
+        </div>
+
+        <button type="button" onclick="submitApplication()">ส่งใบสมัคร</button>
+      </form>
+    </div>
+
+    <script>
+      // JavaScript
+      function submitApplication() {
+        // ดึงค่าจากฟอร์ม
+        const fullName = document.getElementById("fullName").value;
+        const pressure = document.getElementById("pressure").value;
+        const fanInteraction = document.getElementById("fanInteraction").value;
+        const angerLevel = document.getElementById("angerLevel").value;
+        const handleCriticism =
+          document.getElementById("handleCriticism").checked;
+
+        // แสดงผลข้อมูลใน Console
+        console.log("Full Name:", fullName);
+        console.log("Pressure Handling:", pressure);
+        console.log("Fan Interaction Level:", fanInteraction);
+        console.log("Rival Anger Level:", angerLevel);
+        console.log("Can Handle Criticism:", handleCriticism);
+
+        // แจ้งเตือนผู้ใช้
+        alert("ส่งใบสมัครเรียบร้อย! ไปดู Console เพื่อเช็คข้อมูล");
+      }
+    </script>
+  </body>
+</html>
